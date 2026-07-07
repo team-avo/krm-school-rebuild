@@ -26,7 +26,11 @@ import {
   Users,
   Smile,
   Trophy,
-  
+  Monitor,
+  ArrowUpDown,
+  Library,
+  Accessibility,
+  School,
 } from "lucide-react";
 import { pic } from "@/lib/photos";
 
@@ -55,10 +59,11 @@ const values = [
 ];
 
 const timeline = [
-  { year: "2013", title: "A school is born", text: "KRM Special School becomes an independent institution within the KRM Group." },
-  { year: "2016", title: "Therapy expands", text: "In-house occupational, speech and behaviour therapy welcome more children." },
-  { year: "2019", title: "NIOS centre", text: "Accredited as an open-school centre, opening board exam pathways for our students." },
-  { year: "2022", title: "Creative & vocational", text: "Art, music, baking and life-skills programmes flourish across age groups." },
+  { year: "2013", title: "A school is born", text: "Our school started on 4th October 2013 by founder Mr. R.J. Master with OT, Speech and Remedial teaching with 38 students." },
+  { year: "2015", title: "Moved to present school building", text: "Students shifted to Kaligi Ranganathan Montford Special School, the Present School Building, with 77 students." },
+  { year: "2017", title: "First public examination batch", text: "The first batch of 10th standard students appeared for the public examination." },
+  { year: "Achievements", title: "Awards, medals and participation", text: "Students participated in Marathon, Rubik’s cube, cultural events, sports events and competitions, winning awards, medals and trophies." },
+  { year: "2023", title: "NIOS curriculum introduced", text: "NIOS, the National Institute of Open Schooling curriculum, was introduced." },
   { year: "Today", title: "A growing family", text: "250+ children, 30+ educators, a north-Chennai beacon of compassionate education." },
 ];
 
@@ -67,6 +72,14 @@ const trustPoints = [
   { icon: HeartHandshake, title: "Qualified special educators", text: "Trained, certified and chosen for warmth." },
   { icon: Sun, title: "Sensory-friendly campus", text: "Soft lighting, quiet corners, predictable routines." },
   { icon: BookOpen, title: "Individual Education Plans", text: "Goals shaped around each child's unique pace." },
+];
+
+const facilities = [
+  { icon: School, title: "Auditorium", text: "A spacious space for assemblies, performances and celebrations." },
+  { icon: ArrowUpDown, title: "Elevator", text: "Easy access across floors for every child and caregiver." },
+  { icon: Monitor, title: "Computer Lab", text: "Modern systems to support digital learning and skill development." },
+  { icon: Library, title: "Library", text: "A quiet, welcoming collection of books and learning resources." },
+  { icon: Accessibility, title: "Stair Climbing Electrical Wheel Chair", text: "Accessibility support for safe, comfortable movement." },
 ];
 
 function AboutPage() {
@@ -137,13 +150,22 @@ function AboutPage() {
             <h2 className="section-title mb-3">A legacy of compassionate education.</h2>
             <CrayonUnderline className="w-44 h-3 mb-6" />
             <p className="text-muted-foreground leading-relaxed mb-4">
-              KRM Special School became an independent institution in 2013, born from the warm vision of Dean Shri R. Janardhanan with the blessings of his mother late Smt. Kaligi Ammal and father Shri Ranganathan Chettiar.
+              Our school started on 4th October 2013 by our founder Mr. R.J. Master with OT, Speech and Remedial teaching with 38 students.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              Today, the school supports children with Dyslexia, Autism, Intellectual Disability, ADHD and developmental delays. Each child is trained by qualified Special Educators on a plan shaped just for them.
+              On June 2015 the students were shifted to Kaligi Ranganathan Montford Special School, the Present School Building, with 77 students.
+            </p>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              In 2017 our first batch of 10th standard students appeared for the public examination.
+            </p>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              Our students have participated in various activities like Marathon, Rubik’s cube, Cultural, sport events and competitions, and have won various Awards, Medals and Trophies.
+            </p>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              In 2023 the NIOS (National Institute of Open Schooling) curriculum was introduced.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              Based on a detailed assessment, Individualised Education Plans nurture communication, social skills and daily-life independence, all alongside academics.
+              Today, the school supports children with Dyslexia, Autism, mild intellectual disability, ADHD, developmental delays and communication or learning challenges. Each child is trained by qualified Special Educators on a plan shaped just for them.
             </p>
           </div>
           <div className="relative">
@@ -253,8 +275,17 @@ function AboutPage() {
             <p className="text-[var(--royal)] text-xs tracking-[0.35em] uppercase mb-3">Our Care Approach</p>
             <h2 className="section-title mb-3">Calm. Consistent. Child-centred.</h2>
             <CrayonUnderline className="w-44 h-3 mb-6" />
-            <p className="text-muted-foreground leading-relaxed mb-6">
+            <p className="text-muted-foreground leading-relaxed mb-4">
               Our therapists, special educators and caregivers work as one team. We listen first, plan gently, and celebrate every small win, because small wins build big lives.
+            </p>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              Our educators use visual aids, picture models and structured visual cues to support communication and comprehension for every learner.
+            </p>
+            <p className="text-muted-foreground leading-relaxed mb-6">
+              Each morning, physical exercises are incorporated into the daily opening session to help children settle in, sharpen focus and gently reduce hyperactivity.
+            </p>
+            <p className="text-muted-foreground leading-relaxed mb-6">
+              Every child is formally assessed three times a year, so their Individualised Education Plan stays responsive to real progress.
             </p>
             <div className="grid sm:grid-cols-2 gap-4">
               {[
@@ -271,6 +302,62 @@ function AboutPage() {
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ---------- AREAS OF DEVELOPMENT ---------- */}
+      <section className="py-20 bg-white relative overflow-hidden">
+        <div className="container mx-auto px-4 max-w-6xl relative">
+          <div className="text-center max-w-2xl mx-auto mb-12">
+            <p className="text-[var(--royal)] text-xs tracking-[0.35em] uppercase mb-3">Whole-Child Growth</p>
+            <h2 className="section-title mb-3">Areas of Development</h2>
+            <CrayonUnderline className="w-44 h-3 mx-auto" />
+            <p className="text-muted-foreground leading-relaxed mt-5">
+              Every learning plan at KRM nurtures the whole child across six interconnected areas.
+            </p>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {[
+              { t: "Physical Development", d: "Gross motor and fine motor skills built through movement, play and structured exercises." },
+              { t: "Language Development", d: "Speech, vocabulary, comprehension and expressive communication supported every day." },
+              { t: "Social & Emotional Development", d: "Friendship, sharing, self-regulation and emotional awareness in a calm community." },
+              { t: "Intellectual & Cognitive Skills", d: "Attention, memory, reasoning and problem-solving grown at each child's pace." },
+              { t: "Daily Living Skills", d: "Self-care, mealtime routines, dressing and personal organisation for real-world independence." },
+              { t: "Behavioural & Functional Independence", d: "Structured routines and individualised plans that help every child thrive with confidence." },
+            ].map((a) => (
+              <div key={a.t} className="soft-card p-6">
+                <h4 className="font-display text-lg text-[var(--navy)] mb-2">{a.t}</h4>
+                <p className="text-sm text-muted-foreground leading-relaxed">{a.d}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ---------- FACILITIES AVAILABLE ---------- */}
+      <section className="py-24 bg-[var(--sky)]/40 relative overflow-hidden">
+        <PaperCloud size={90} className="absolute top-12 left-10 opacity-30 animate-bob" />
+        <MiniStar size={12} className="absolute top-20 right-1/4 animate-sparkle" />
+        <div className="container mx-auto px-4 relative">
+          <div className="text-center max-w-2xl mx-auto mb-14">
+            <p className="text-[var(--royal)] text-xs tracking-[0.35em] uppercase mb-3">Campus Facilities</p>
+            <h2 className="section-title">Facilities Available</h2>
+            <CrayonUnderline className="w-44 h-3 mx-auto mt-4" />
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-6xl mx-auto">
+            {facilities.map((f) => {
+              const Icon = f.icon;
+              return (
+                <div key={f.title} className="soft-card p-6 text-center glow-border">
+                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[var(--navy)] to-[var(--royal)] text-[var(--gold)] flex items-center justify-center mx-auto mb-4">
+                    <Icon size={22} />
+                  </div>
+                  <h4 className="font-display text-lg text-[var(--navy)] mb-2">{f.title}</h4>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{f.text}</p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>

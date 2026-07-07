@@ -92,8 +92,11 @@ export function Footer() {
         {/* Reach Us */}
         <div>
           <h4 className="font-display text-lg mb-4 text-[var(--gold)]">Reach Us</h4>
-          <p className="font-display text-base font-semibold text-white mb-4">
+          <p className="font-display text-base font-semibold text-white mb-1 leading-snug">
             KRM SPECIAL SCHOOL
+          </p>
+          <p className="text-xs italic text-[var(--gold)] mb-4">
+            A Special School for God's Special Children
           </p>
           <ul className="space-y-3 text-sm text-white/80">
             <li className="flex items-center gap-2">
@@ -186,7 +189,7 @@ export function Footer() {
       {/* Footer Bottom */}
       <div className="border-t border-white/10 relative z-10">
         <div className="container mx-auto px-4 py-5 flex flex-col md:flex-row justify-between items-center gap-3 text-xs text-white/60">
-          <p>© 2023 KRM Special School | Powered by Work of Wonderz</p>
+          <p>© 2026 KRM Special School | Powered by Work of Wonderz</p>
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             className="bg-[var(--gold)] text-[var(--navy)] p-2.5 rounded-full hover:scale-110 transition"

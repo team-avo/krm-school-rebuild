@@ -1,7 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { Layout, PageHero } from "@/components/Layout";
-import { Expand, X } from "lucide-react";
+import { Expand } from "lucide-react";
+import { Lightbox } from "@/components/Lightbox";
 import p1 from "@/assets/krm/achievements-2024-25/Picture1.jpg.asset.json";
 import p2 from "@/assets/krm/achievements-2024-25/Picture2.jpg.asset.json";
 import p3 from "@/assets/krm/achievements-2024-25/Picture3.jpg.asset.json";
@@ -45,7 +46,7 @@ const FILTERS: { id: Category; label: string }[] = [
 
 function AchievementsYear() {
   const [filter, setFilter] = useState<Category>("all");
-  const [lightbox, setLightbox] = useState<Item | null>(null);
+  const [lightboxIdx, setLightboxIdx] = useState<number | null>(null);
   const visible = filter === "all" ? ITEMS : ITEMS.filter((i) => i.category === filter);
 
   return (
@@ -74,10 +75,10 @@ function AchievementsYear() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {visible.map((item) => (
+            {visible.map((item, i) => (
               <button
                 key={item.src}
-                onClick={() => setLightbox(item)}
+                onClick={() => setLightboxIdx(i)}
                 className="group relative rounded-2xl overflow-hidden shadow-lg bg-white ring-1 ring-black/5 hover:shadow-2xl hover:-translate-y-1 transition-all"
               >
                 <img
@@ -95,26 +96,12 @@ function AchievementsYear() {
         </div>
       </section>
 
-      {lightbox && (
-        <div
-          className="fixed inset-0 z-[100] bg-black/90 flex items-center justify-center p-4 animate-fade-in"
-          onClick={() => setLightbox(null)}
-        >
-          <button
-            className="absolute top-6 right-6 text-white p-2 rounded-full hover:bg-white/10"
-            onClick={() => setLightbox(null)}
-            aria-label="Close"
-          >
-            <X size={28} />
-          </button>
-          <img
-            src={lightbox.src}
-            alt={lightbox.alt}
-            className="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl"
-            onClick={(e) => e.stopPropagation()}
-          />
-        </div>
-      )}
+      <Lightbox
+        images={visible.map((i) => ({ src: i.src, alt: i.alt, caption: i.alt }))}
+        index={lightboxIdx}
+        onClose={() => setLightboxIdx(null)}
+        onIndexChange={setLightboxIdx}
+      />
     </Layout>
   );
 }

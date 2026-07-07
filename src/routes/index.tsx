@@ -20,6 +20,7 @@ import {
 import { Layout } from "@/components/Layout";
 import { Butterfly } from "@/components/Butterfly";
 import { QuoteMark } from "@/components/Doodles";
+import { Lightbox } from "@/components/Lightbox";
 import { Music, Brush, Utensils, Users2 } from "lucide-react";
 import { pic } from "@/lib/photos";
 
@@ -79,24 +80,40 @@ const milestones = [
 ];
 
 const testimonials = [
-  { name: "Devkar Nadar", role: "Parent", text: "The best foundation for special children. Management and teachers are kind, polite and their teaching methods are extraordinary." },
-  { name: "Iswariya Sivakumar", role: "Parent", text: "My daughter has studied here for two and a half years. The teachers are friendly, comfortable and treat our child with great care." },
-  { name: "T. Rithikaa", role: "Parent", text: "In north Chennai, KRM was the best school for my child. Day-to-day independence has grown, the teachers are passionate and pleasing." },
+  { name: "Devkar Nadar", role: "Parent", text: "It is a best foundation for Special Children. Management & Teacher's are very kind & polite. Teachers are more supported to the kids. They are best in all the activities. Their teaching methods are extraordinary. The School management make there students more TALENTED. It's a Great place to Study Special Children." },
+  { name: "Iswariya Sivakumar", role: "Parent", text: "This is one of the best school for special children. My daughter is studying for last two and half years. I am not facing any problem till now. The teachers are very friendly, comfortable to speak and also treating our child with good manner. Right place to God's children." },
+];
+
+const featureCards = [
+  { icon: Heart, title: "Attention to Proficiency", text: "We understand that each child is unique and requires personalised solutions for effective learning." },
+  { icon: Users, title: "Experts & Special Educators", text: "Our team of experts are committed to delivering interactive and impactful sessions that bring out the best." },
+  { icon: HeartHandshake, title: "Process Driven Therapy", text: "Our process-driven therapy empowers each child to work independently." },
+];
+
+const whatWeOffer = [
+  { icon: Hand, title: "Physical Development", text: "Occupational Therapy" },
+  { icon: MessageCircle, title: "Language Development", text: "Speech Therapy" },
+  { icon: Users2, title: "Social / Emotional / Intellectual Development", text: "Social, Emotional & Cognitive Skills" },
+  { icon: Music, title: "Yoga, Art & Craft and Music classes", text: "Yoga, Art & Craft and Music classes are conducted to improve the child's memory, attention and concentration." },
+  { icon: SparklesIcon, title: "Hyperactivity Support", text: "To reduce the Hyperactivity of the children, physical exercises are given during the Morning Prayer Sessions." },
+  { icon: Utensils, title: "Self-Eating Skill Training", text: "Special care is taken during lunch hours by giving training to master self eating skills." },
 ];
 
 const galleryItems = [
-  { src: pic("gallery/IMG_2019.jpg"), caption: "Curious minds" },
-  { src: pic("intro1.jpg"), caption: "Little artists" },
-  { src: pic("gallery/Picture18.jpg"), caption: "Joyful play" },
-  { src: pic("gallery/IMG_2035.jpg"), caption: "Festive smiles" },
-  { src: pic("gallery/IMG_2041.jpg"), caption: "Together we grow" },
-  { src: pic("intro3.jpg"), caption: "Discoveries" },
-  { src: pic("gallery/IMG_2085.jpg"), caption: "Proud moments" },
-  { src: pic("about/about2.jpg"), caption: "Caring hands" },
+  { src: pic("gallery/IMG_2019.jpg"), caption: "Curious minds", alt: "Children exploring and learning at KRM Special School" },
+  { src: pic("intro1.jpg"), caption: "Little artists", alt: "Young students engaged in creative art activities" },
+  { src: pic("gallery/Picture18.jpg"), caption: "Joyful play", alt: "Students enjoying playful learning activities" },
+  { src: pic("gallery/IMG_2035.jpg"), caption: "Festive smiles", alt: "Festive celebrations with smiling students" },
+  { src: pic("gallery/IMG_2041.jpg"), caption: "Together we grow", alt: "Students growing together in a supportive environment" },
+  { src: pic("intro3.jpg"), caption: "Discoveries", alt: "Children making discoveries through hands-on learning" },
+  { src: pic("gallery/IMG_2085.jpg"), caption: "Proud moments", alt: "Proud moments of achievement at KRM Special School" },
+  { src: pic("about/about2.jpg"), caption: "Caring hands", alt: "Caring teachers and educators at KRM Special School" },
+  { src: pic("gallery/campus-building-2026-06-20.jpeg"), caption: "Our campus", alt: "KRM Special School campus building in Perambur Chennai" },
 ];
 
 function Home() {
   const [tIdx, setTIdx] = useState(0);
+  const [lightboxIdx, setLightboxIdx] = useState<number | null>(null);
   useEffect(() => {
     const id = setInterval(() => setTIdx((s) => (s + 1) % testimonials.length), 6000);
     return () => clearInterval(id);
@@ -126,13 +143,17 @@ function Home() {
         <div className="relative z-10 container mx-auto px-4 py-20 md:py-28 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left content */}
           <div>
+            <p className="font-display italic text-[var(--gold)] text-base md:text-lg mb-3 tracking-wide">
+              Learning Knows No Bounds
+            </p>
             <h1 className="font-display text-5xl md:text-6xl lg:text-7xl leading-[1.04] mb-6 text-white">
               Empowering Every Child to{" "}
               <span className="gradient-text">Blossom</span>
             </h1>
             <p className="text-lg md:text-xl text-white/85 max-w-lg mb-10 leading-relaxed">
-              A nurturing special school dedicated to care, learning, independence
-              and joyful development, where uniqueness is celebrated every single day.
+              A place where uniqueness is celebrated and success knows no bounds -
+              a nurturing special school dedicated to care, learning, independence
+              and joyful development.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link to="/about" className="btn-gold btn-shimmer">
@@ -147,7 +168,7 @@ function Home() {
               {[
                 { n: "250+", l: "Students" },
                 { n: "30+", l: "Educators" },
-                { n: "12+", l: "Years" },
+                { n: "180+", l: "Parents" },
               ].map((s) => (
                 <div key={s.l}>
                   <div className="font-display text-3xl md:text-4xl text-[var(--gold)]">{s.n}</div>
@@ -173,6 +194,26 @@ function Home() {
         </div>
       </section>
 
+      {/* ------------ FEATURE CARDS ------------ */}
+      <section className="py-20 md:py-24 bg-[var(--sky)]/30 relative">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {featureCards.map((f) => {
+              const Icon = f.icon;
+              return (
+                <div key={f.title} className="soft-card p-8">
+                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[var(--navy)] to-[var(--royal)] text-[var(--gold)] flex items-center justify-center mb-5 shadow-md">
+                    <Icon size={24} />
+                  </div>
+                  <h3 className="font-display text-xl text-[var(--navy)] mb-2">{f.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{f.text}</p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
       {/* ------------ ABOUT ------------ */}
       <section className="py-24 md:py-28 bg-white relative">
         <div className="container mx-auto px-4 grid lg:grid-cols-2 gap-16 items-center">
@@ -190,14 +231,24 @@ function Home() {
               A school built on warmth, patience and possibility.
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              KRM Special School supports children with Dyslexia, Autism, Intellectual
-              Disability, ADHD and developmental delays. Every child is welcomed for
-              who they are, then gently guided toward who they can become.
+              KRM Special School is a part of KRM Group of Schools and moved as an
+              independent school in the year 2013.
+            </p>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              We handle children with Dyslexic, Autistic, ID, ADHD and developmental
+              delay. These children are trained by Special Educators.
+            </p>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              On the basis of detailed assessment report, classes will be allotted
+              to the students. Individualized Education Plan is framed, delivered and
+              followed by our special educators and trained personnel. The school
+              focuses on developing student's communication skill, social skill, and
+              activities at daily living combined with academics.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-8">
-              Through compassionate education, therapy, life skills and creativity,
-              we help each child grow in confidence, communication and independence -
-              all within a calm, safe and joy-filled environment.
+              Kaligi Ranganathan Montford School for Special Children was started by
+              Dean Shri R. Janardhanan with the blessings of his mother late Smt.
+              Kaligi Ammal and father Shri. Ranganathan Chettiar.
             </p>
             <div className="grid sm:grid-cols-2 gap-4 mb-10">
               {[
@@ -223,6 +274,30 @@ function Home() {
               </p>
               <p className="text-xs text-muted-foreground mt-2">Our Promise</p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ------------ WHAT WE OFFER ------------ */}
+      <section className="py-24 bg-white relative">
+        <div className="container mx-auto px-4">
+          <div className="text-center max-w-2xl mx-auto mb-14">
+            <p className="text-xs tracking-[0.3em] uppercase text-[var(--royal)]/70 mb-3">What We Offer</p>
+            <h2 className="section-title">Benefits for You</h2>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {whatWeOffer.map((w) => {
+              const Icon = w.icon;
+              return (
+                <div key={w.title} className="soft-card p-7">
+                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[var(--gold)] to-[#e0a945] text-[var(--navy)] flex items-center justify-center mb-5 shadow-md">
+                    <Icon size={24} />
+                  </div>
+                  <h3 className="font-display text-xl text-[var(--navy)] mb-2">{w.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{w.text}</p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -434,7 +509,9 @@ function Home() {
         <Butterfly size={64} className="absolute top-10 right-[6%] opacity-20 animate-flutter hidden lg:block" />
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center max-w-2xl mx-auto mb-14">
-            <h2 className="font-display text-4xl md:text-5xl">Why families choose KRM.</h2>
+            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl leading-tight px-2">
+              Why families choose KRM Special School.
+            </h2>
           </div>
           <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-5">
             {whyUs.map((w) => {
@@ -492,19 +569,25 @@ function Home() {
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
             {galleryItems.map((g, i) => (
-              <div key={i} className="rounded-2xl overflow-hidden shadow-md bg-white">
+              <button
+                key={i}
+                type="button"
+                onClick={() => setLightboxIdx(i)}
+                className="group rounded-2xl overflow-hidden shadow-md bg-white text-left focus:outline-none focus:ring-2 focus:ring-[var(--gold)]"
+                aria-label={`View ${g.caption}`}
+              >
                 <div className="relative overflow-hidden aspect-[4/5]">
                   <img
                     src={g.src}
-                    alt={g.caption}
-                    className="w-full h-full object-cover"
+                    alt={g.alt || g.caption}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     loading="lazy"
                   />
                   <div className="absolute inset-x-0 bottom-0 p-3 bg-gradient-to-t from-[var(--navy)]/85 to-transparent">
                     <p className="text-white text-sm font-medium">{g.caption}</p>
                   </div>
                 </div>
-              </div>
+              </button>
             ))}
           </div>
 
@@ -572,6 +655,12 @@ function Home() {
           </div>
         </div>
       </section>
+      <Lightbox
+        images={galleryItems.map((g) => ({ src: g.src, caption: g.caption, alt: g.alt || g.caption }))}
+        index={lightboxIdx}
+        onClose={() => setLightboxIdx(null)}
+        onIndexChange={setLightboxIdx}
+      />
     </Layout>
   );
 }

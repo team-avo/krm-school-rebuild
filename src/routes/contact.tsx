@@ -44,13 +44,13 @@ const channels = [
   { icon: Phone, label: "Call Us", v1: "9042 111 150", v2: "8939 977 645", href: "tel:+919042111150" },
   { icon: MessageCircle, label: "WhatsApp", v1: "Chat with admissions", v2: "Usually replies within a day", href: "https://wa.me/919042111150" },
   { icon: Mail, label: "Email", v1: "krm.specialschool@gmail.com", v2: "We reply within 24 hours", href: "mailto:krm.specialschool@gmail.com" },
-  { icon: MapPin, label: "Visit", v1: "No 10, Bharathi Road", v2: "Perambur, Chennai 600011", href: "https://www.google.com/maps?q=KRM+Special+School+Perambur+Chennai" },
+  { icon: MapPin, label: "Visit", v1: "No 10, Bharathi Road, 2nd Street", v2: "Perambur, Chennai 600011", href: "https://www.google.com/maps?q=No+10+Bharathi+Road+2nd+Street+Perambur+Chennai+600011" },
 ];
 
+// Working hours confirmed by client: Mon–Fri 9:30 AM – 2:30 PM (old-site hours).
 const hours = [
-  { day: "Monday – Friday", time: "9:00 am – 6:00 pm" },
-  { day: "Saturday", time: "9:00 am – 1:30 pm" },
-  { day: "Sunday & Holidays", time: "Closed" },
+  { day: "Monday – Friday", time: "9:30 am – 2:30 pm" },
+  { day: "Saturday, Sunday & Holidays", time: "Closed" },
 ];
 
 function ContactPage() {
@@ -141,9 +141,11 @@ function ContactPage() {
             <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white">
               <iframe
                 title="KRM Special School location"
-                src="https://www.google.com/maps?q=KRM+Special+School+Perambur+Chennai&output=embed"
+                src="https://www.google.com/maps?q=No+10+Bharathi+Road+2nd+Street+Perambur+Chennai+600011&output=embed"
                 className="w-full h-[440px] border-0"
                 loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                allowFullScreen
               />
             </div>
             <div className="absolute -bottom-5 left-6 bg-white soft-card px-5 py-3 flex items-center gap-3">

@@ -29,6 +29,8 @@ import {
   Heart,
   Sparkles as SparklesIcon,
   Trophy,
+  Activity,
+  Dumbbell,
 } from "lucide-react";
 import { pic, galleryPhotos } from "@/lib/photos";
 
@@ -70,7 +72,7 @@ const programs = [
     slug: "functional-academics",
     icon: HomeIcon,
     title: "Life Skills Training",
-    text: "Eating, dressing, money handling and travel skills that grow real-world independence.",
+    text: "Eating, dressing, money handling and travel skills that grow real-world independence. During lunch, our educators provide gentle, patient training to help children master self-feeding — a foundational step toward independence.",
     bg: "#FFEAD8",
     bg2: "#D8ECFF",
   },
@@ -94,9 +96,25 @@ const programs = [
     slug: "pre-primary",
     icon: Users,
     title: "Parent Guidance",
-    text: "Workshops, counselling and home programmes so families grow alongside their child.",
+    text: "Parent Teacher Meetings, workshops, counselling and home programmes so families grow alongside their child.",
     bg: "#D8ECFF",
     bg2: "#FFF4DC",
+  },
+  {
+    slug: "remedial",
+    icon: Activity,
+    title: "Remedial Education",
+    text: "Focused support in reading, writing, number concepts, attention, comprehension and memory, planned around each child's assessment and IEP.",
+    bg: "#FFEAD8",
+    bg2: "#FFF4DC",
+  },
+  {
+    slug: "physical-training-yoga",
+    icon: Dumbbell,
+    title: "Physical Training & Yoga",
+    text: "Physical training, yoga and guided movement build body awareness, balance, coordination, focus, confidence and emotional regulation.",
+    bg: "#D8ECFF",
+    bg2: "#FFEAD8",
   },
 ];
 
@@ -165,6 +183,41 @@ function ProgramsIndex() {
           </p>
         </div>
       </section>
+
+      {/* ---------- TEACHING METHODOLOGY ---------- */}
+      <section className="py-16 bg-[var(--sky)]/30">
+        <div className="container mx-auto px-4 max-w-5xl text-center">
+          <p className="text-[var(--royal)] text-xs tracking-[0.35em] uppercase mb-3">How We Teach</p>
+          <h2 className="section-title mb-4">Teaching Methodology</h2>
+          <p className="text-muted-foreground leading-relaxed max-w-3xl mx-auto">
+            Our teaching approach includes visual aids, picture models, structured routines, hands-on activities,
+            repeated practice, individualised instruction and real-life learning experiences, so every child
+            learns in the way that makes most sense to them.
+          </p>
+        </div>
+      </section>
+
+      {/* ---------- REMEDIAL & PHYSICAL ---------- */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4 max-w-6xl grid md:grid-cols-2 gap-6">
+          <div className="soft-card p-7">
+            <h3 className="font-display text-2xl text-[var(--navy)] mb-2">Remedial Education</h3>
+            <p className="text-muted-foreground leading-relaxed">
+              Remedial education supports students who require additional help in reading, writing, number
+              concepts, attention, comprehension, memory, classroom readiness and functional academics.
+              Sessions are planned according to each child's assessment, learning pace and IEP goals.
+            </p>
+          </div>
+          <div className="soft-card p-7">
+            <h3 className="font-display text-2xl text-[var(--navy)] mb-2">Physical Training, Yoga &amp; Movement</h3>
+            <p className="text-muted-foreground leading-relaxed">
+              Physical training, yoga, movement activities and guided exercises support body awareness, balance,
+              coordination, flexibility, focus, confidence and emotional regulation.
+            </p>
+          </div>
+        </div>
+      </section>
+
 
       {/* ---------- PROGRAM CARDS ---------- */}
       <section className="py-16 bg-white relative overflow-hidden">
@@ -314,7 +367,7 @@ function ProgramsIndex() {
               We host parent workshops, individual counselling and home-programme sessions to help families understand, support and celebrate their child every day.
             </p>
             <ul className="space-y-3 mb-8">
-              {["Monthly parent workshops", "1-on-1 counselling sessions", "Home programme guides", "WhatsApp updates from teachers"].map((t) => (
+              {["Parent Teacher Meetings (PTMs)", "Monthly parent workshops", "1-on-1 counselling sessions", "Home programme guides", "WhatsApp updates from teachers"].map((t) => (
                 <li key={t} className="flex items-start gap-3">
                   <Sparkle className="w-4 h-4 mt-1 text-[var(--gold)]" />
                   <span className="text-sm text-[var(--navy)] font-medium">{t}</span>

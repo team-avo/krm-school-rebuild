@@ -30,6 +30,8 @@ export const PRIMARY_NAV: NavItem[] = [
       { label: "VI to XII", to: "/programs/vi-to-xii" },
       { label: "NIOS (X & XII)", to: "/nios" },
       { label: "Functional Academics", to: "/programs/functional-academics" },
+      { label: "Remedial Education", to: "/programs/remedial" },
+      { label: "Physical Training & Yoga", to: "/programs/physical-training-yoga" },
       { label: "Pre Vocational", to: "/pre-vocational" },
       { label: "Vocational", to: "/vocational" },
     ],

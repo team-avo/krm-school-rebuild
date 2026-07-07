@@ -12,8 +12,9 @@ import {
   Kite,
   PaperPlane,
 } from "@/components/Doodles";
-import { galleryPhotos, eventPhotos, pic } from "@/lib/photos";
-import { ArrowRight, X, Camera } from "lucide-react";
+import { galleryEntries, galleryMetaFor, eventPhotos, pic } from "@/lib/photos";
+import { ArrowRight, Camera } from "lucide-react";
+import { Lightbox } from "@/components/Lightbox";
 
 export const Route = createFileRoute("/gallery")({
   head: () => ({
@@ -46,17 +47,31 @@ const CAPTIONS = [
 
 function GalleryPage() {
   const [tab, setTab] = useState<Tab>("All");
-  const [lightbox, setLightbox] = useState<string | null>(null);
+  const [lightboxIdx, setLightboxIdx] = useState<number | null>(null);
 
   const items = useMemo(() => {
-    const main = galleryPhotos.map((src, i) => ({
-      src,
-      caption: CAPTIONS[i % CAPTIONS.length].c,
-      tag: CAPTIONS[i % CAPTIONS.length].t as Tab,
-    }));
+    const tagMap: Record<string, Tab> = {
+      "Student Achievements": "Celebrations",
+      "ECA": "Activities",
+      "Events": "Events",
+      "Campus Moments": "Learning",
+      "Therapy": "Activities",
+    };
+    const main = galleryEntries.map((entry, i) => {
+      const meta = galleryMetaFor(entry.key);
+      const fallback = CAPTIONS[i % CAPTIONS.length];
+      const tag = (meta.tag && tagMap[meta.tag]) || (fallback.t as Tab);
+      return {
+        src: entry.url,
+        caption: meta.alt !== "KRM Special School gallery photo" ? meta.alt : fallback.c,
+        alt: meta.alt !== "KRM Special School gallery photo" ? meta.alt : `KRM Special School ${fallback.c.toLowerCase()}`,
+        tag,
+      };
+    });
     const events = eventPhotos.map((src, i) => ({
       src,
       caption: `Event highlight ${i + 1}`,
+      alt: `KRM Special School event photo ${i + 1}`,
       tag: "Events" as Tab,
     }));
     const all = [...main, ...events];
@@ -124,7 +139,7 @@ function GalleryPage() {
           {items.map((it, i) => (
             <button
               key={it.src + i}
-              onClick={() => setLightbox(it.src)}
+              onClick={() => setLightboxIdx(i)}
               className="mb-5 break-inside-avoid relative bg-white rounded-2xl shadow-[0_18px_40px_-22px_rgba(11,22,53,0.45)] p-2 block w-full text-left transition-transform duration-500 hover:-translate-y-1"
               style={{ transform: `rotate(${(i % 3) - 1}deg)` }}
             >
@@ -133,7 +148,7 @@ function GalleryPage() {
               <div className="overflow-hidden rounded-xl">
                 <img
                   src={it.src}
-                  alt={it.caption}
+                  alt={it.alt}
                   loading="lazy"
                   className={`w-full ${i % 3 === 0 ? "h-72" : i % 3 === 1 ? "h-56" : "h-64"} object-cover transition-transform duration-700 hover:scale-110`}
                 />
@@ -168,21 +183,12 @@ function GalleryPage() {
       </section>
 
       {/* ---------- LIGHTBOX ---------- */}
-      {lightbox && (
-        <div
-          className="fixed inset-0 z-[100] bg-[var(--navy)]/95 backdrop-blur-sm flex items-center justify-center p-4 animate-fade-in"
-          onClick={() => setLightbox(null)}
-        >
-          <button
-            className="absolute top-6 right-6 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center"
-            onClick={() => setLightbox(null)}
-            aria-label="Close"
-          >
-            <X size={22} />
-          </button>
-          <img src={lightbox} alt="Gallery view" className="max-w-full max-h-[88vh] rounded-2xl shadow-2xl" />
-        </div>
-      )}
+      <Lightbox
+        images={items.map((it) => ({ src: it.src, caption: it.caption, alt: it.alt }))}
+        index={lightboxIdx}
+        onClose={() => setLightboxIdx(null)}
+        onIndexChange={setLightboxIdx}
+      />
     </Layout>
   );
 }
