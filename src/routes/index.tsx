@@ -323,8 +323,8 @@ function Home() {
 
           <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {[
-              { n: "30+", l: "Special Educators", Icon: BookOpen, sub: "Trained, patient, deeply caring" },
-              { n: "180+", l: "Happy Parents", Icon: HeartHandshake, sub: "Families walking with us" },
+              { n: "50+", l: "Special Educators", Icon: BookOpen, sub: "Trained, patient, deeply caring" },
+              { n: "300+", l: "Happy Parents", Icon: HeartHandshake, sub: "Families walking with us" },
               { n: "250+", l: "Students", Icon: Smile, sub: "Growing every single day" },
             ].map(({ n, l, Icon, sub }) => (
               <div
