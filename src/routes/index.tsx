@@ -167,8 +167,8 @@ function Home() {
             <div className="mt-12 grid grid-cols-3 gap-8 max-w-md border-t border-white/20 pt-8">
               {[
                 { n: "250+", l: "Students" },
-                { n: "30+", l: "Educators" },
-                { n: "180+", l: "Parents" },
+                { n: "50+", l: "Educators" },
+                { n: "300+", l: "Parents" },
               ].map((s) => (
                 <div key={s.l}>
                   <div className="font-display text-3xl md:text-4xl text-[var(--gold)]">{s.n}</div>
