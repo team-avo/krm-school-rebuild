@@ -114,7 +114,7 @@ export function Footer() {
             </li>
             <li className="flex items-start gap-2">
               <MapPin size={16} className="text-[var(--gold)] mt-0.5 shrink-0" />
-              <span>No 10, Bharathi Road, Perambur, Chennai 600011</span>
+              <span>No 10, Bharathi Road, 2nd Street, Perambur, Chennai 600011</span>
             </li>
           </ul>
           <div className="flex gap-3 mt-5">

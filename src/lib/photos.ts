@@ -30,14 +30,45 @@ export function pic(path: string): string {
   return lookup[path] ?? "";
 }
 
+/** Explicit display order for client-uploaded photos — newest uploads first. */
+const CLIENT_PHOTO_ORDER: string[] = [
+  "gallery/new-2026-02-06-vels-inaugural-collage.jpeg",
+  "gallery/new-2026-02-06-vels-stage-group.jpeg",
+  "gallery/new-2026-02-06-fiba-basketball-qualifiers.jpeg",
+  "gallery/new-2026-02-06-athletics-podium.jpeg",
+  "gallery/new-2026-02-06-karma-yogi-certificates.jpeg",
+  "gallery/new-2026-02-06-stadium-running.jpeg",
+  "gallery/new-2026-02-06-yoga-pyramid.jpeg",
+  "gallery/new-2026-02-06-pongal-celebration.jpeg",
+  "gallery/new-2026-02-06-one-on-one-1.jpeg",
+  "gallery/new-2026-02-06-one-on-one-2.jpeg",
+  "gallery/new-2026-02-06-days-months-cards.jpeg",
+  "gallery/new-2026-02-06-fabric-painting.jpeg",
+  "gallery/new-2026-02-06-yoga-3.jpeg",
+  "gallery/new-2026-02-04-classroom-cards.jpeg",
+  "gallery/new-2026-02-06-christmas-drama.jpeg",
+  "gallery/new-2026-02-06-paper-craft.jpeg",
+  "gallery/new-2026-02-06-yoga-1.jpeg",
+  "gallery/new-2026-02-06-yoga-2.jpeg",
+  "gallery/campus-building-2026-06-20.jpeg",
+  "gallery/new-2026-06-20-at-04.30.44.jpeg",
+  "gallery/new-2026-05-11-at-03.01.06.jpeg",
+  "gallery/new-2026-05-11-at-03.01.46.jpeg",
+  "gallery/new-2026-05-11-at-03.01.47.jpeg",
+  "gallery/new-2026-05-11-at-03.02.28.jpeg",
+  "gallery/new-2026-05-11-at-03.02.28-1.jpeg",
+];
+
 /** Gallery entries with the original key so callers can identify each photo. */
 export const galleryEntries: { key: string; url: string }[] = Object.entries(lookup)
   .filter(([k]) => k.startsWith("gallery/"))
   .sort(([a], [b]) => {
-    // Show newest client photos (prefixed "gallery/new-") first, then legacy in name order.
-    const an = a.startsWith("gallery/new-") ? 0 : 1;
-    const bn = b.startsWith("gallery/new-") ? 0 : 1;
-    if (an !== bn) return an - bn;
+    // Client-uploaded photos come first in the explicit order above, then legacy by name.
+    const ai = CLIENT_PHOTO_ORDER.indexOf(a);
+    const bi = CLIENT_PHOTO_ORDER.indexOf(b);
+    if (ai !== -1 && bi !== -1) return ai - bi;
+    if (ai !== -1) return -1;
+    if (bi !== -1) return 1;
     return a.localeCompare(b);
   })
   .map(([k, v]) => ({ key: k, url: v }));
@@ -80,6 +111,78 @@ const GALLERY_META: Record<string, { alt: string; tag: string }> = {
   "gallery/campus-building-2026-06-20.jpeg": {
     alt: "KRM Special School campus building in Perambur Chennai",
     tag: "Campus Moments",
+  },
+  "gallery/new-2026-02-04-classroom-cards.jpeg": {
+    alt: "KRM Special School students learning with picture cards around a group table",
+    tag: "Classroom",
+  },
+  "gallery/new-2026-02-06-christmas-drama.jpeg": {
+    alt: "KRM Special School students performing a costumed Christmas drama on stage",
+    tag: "Events",
+  },
+  "gallery/new-2026-02-06-paper-craft.jpeg": {
+    alt: "KRM Special School student showing a colourful paper bird craft",
+    tag: "ECA",
+  },
+  "gallery/new-2026-02-06-yoga-1.jpeg": {
+    alt: "KRM Special School students standing in prayer pose during a yoga session",
+    tag: "Therapy",
+  },
+  "gallery/new-2026-02-06-yoga-2.jpeg": {
+    alt: "KRM Special School students kneeling on yoga mats in the school hall",
+    tag: "Therapy",
+  },
+  "gallery/new-2026-02-06-yoga-3.jpeg": {
+    alt: "KRM Special School students and teachers practising yoga stretches on mats",
+    tag: "Therapy",
+  },
+  "gallery/new-2026-02-06-one-on-one-1.jpeg": {
+    alt: "KRM Special School special educator working one-on-one with a student at a desk",
+    tag: "Classroom",
+  },
+  "gallery/new-2026-02-06-one-on-one-2.jpeg": {
+    alt: "KRM Special School teacher guiding a student through written work",
+    tag: "Classroom",
+  },
+  "gallery/new-2026-02-06-days-months-cards.jpeg": {
+    alt: "KRM Special School students arranging days and months flashcards with their teacher",
+    tag: "Classroom",
+  },
+  "gallery/new-2026-02-06-fabric-painting.jpeg": {
+    alt: "KRM Special School student fabric painting a red flower during an art activity",
+    tag: "ECA",
+  },
+  "gallery/new-2026-02-06-vels-inaugural-collage.jpeg": {
+    alt: "KRM Special School students at the Vels Trade Centre and Convention Film City inaugural ceremony",
+    tag: "Events",
+  },
+  "gallery/new-2026-02-06-vels-stage-group.jpeg": {
+    alt: "KRM Special School students and teachers on stage at the Vels Convention Centre inauguration",
+    tag: "Events",
+  },
+  "gallery/new-2026-02-06-fiba-basketball-qualifiers.jpeg": {
+    alt: "KRM Special School students at the FIBA Basketball World Cup Qualifiers India vs Saudi Arabia in Chennai",
+    tag: "Student Achievements",
+  },
+  "gallery/new-2026-02-06-athletics-podium.jpeg": {
+    alt: "KRM Special School athletics medal winners with certificates on the winners podium",
+    tag: "Student Achievements",
+  },
+  "gallery/new-2026-02-06-karma-yogi-certificates.jpeg": {
+    alt: "KRM Special School students with medals and certificates at the Karma Yogi Trust sports meet",
+    tag: "Student Achievements",
+  },
+  "gallery/new-2026-02-06-stadium-running.jpeg": {
+    alt: "KRM Special School student running on the stadium track at a sports event",
+    tag: "ECA",
+  },
+  "gallery/new-2026-02-06-yoga-pyramid.jpeg": {
+    alt: "KRM Special School students performing a yoga pyramid formation on stage",
+    tag: "ECA",
+  },
+  "gallery/new-2026-02-06-pongal-celebration.jpeg": {
+    alt: "KRM Special School students in traditional dress during the Pongal celebration on stage",
+    tag: "Events",
   },
 };
 

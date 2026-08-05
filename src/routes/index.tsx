@@ -19,6 +19,9 @@ import {
 } from "lucide-react";
 import { Layout } from "@/components/Layout";
 import { Butterfly } from "@/components/Butterfly";
+import campusBuilding from "@/assets/krm/about/campus-building.jpeg.asset.json";
+import certificatePage1 from "@/assets/krm/certificates/registration-certificate-page-1.jpeg.asset.json";
+import certificatePage2 from "@/assets/krm/certificates/registration-certificate-page-2.jpeg.asset.json";
 import { QuoteMark } from "@/components/Doodles";
 import { Lightbox } from "@/components/Lightbox";
 import { Music, Brush, Utensils, Users2 } from "lucide-react";
@@ -51,7 +54,7 @@ const programs = [
 ];
 
 const whyUs = [
-  { icon: Users, title: "Individual Attention", text: "Small groups with a 7:1 student–teacher ratio plus a supporting educator." },
+  { icon: Users, title: "Individual Attention", text: "Small groups with a 10:1 student–teacher ratio plus a supporting educator." },
   { icon: HeartHandshake, title: "Caring Teachers", text: "Qualified special educators and therapists, chosen for warmth and patience." },
   { icon: ShieldCheck, title: "Safe & Inclusive", text: "A protected, sensory-friendly environment where every child belongs." },
   { icon: Sun, title: "Holistic Development", text: "Academics, therapy, life skills, creativity and emotional wellbeing, together." },
@@ -100,6 +103,11 @@ const whatWeOffer = [
 ];
 
 const galleryItems = [
+  { src: pic("gallery/new-2026-02-06-athletics-podium.jpeg"), caption: "Podium finish", alt: "KRM Special School students receiving certificates on the athletics winners' podium" },
+  { src: pic("gallery/new-2026-02-06-karma-yogi-certificates.jpeg"), caption: "The Real Heroes", alt: "KRM Special School students with Karma Yogi Trust certificates at Nehru Stadium" },
+  { src: pic("gallery/new-2026-02-06-vels-inaugural-collage.jpeg"), caption: "Vels inaugural ceremony", alt: "KRM Special School students performing at the Vels Trade Centre and Convention inaugural ceremony" },
+  { src: pic("gallery/new-2026-02-06-pongal-celebration.jpeg"), caption: "Pongal celebrations", alt: "KRM Special School students in traditional dress during the Pongal celebration on stage" },
+  { src: pic("gallery/campus-building-2026-06-20.jpeg"), caption: "Our campus", alt: "KRM Special School campus building in Perambur Chennai" },
   { src: pic("gallery/IMG_2019.jpg"), caption: "Curious minds", alt: "Children exploring and learning at KRM Special School" },
   { src: pic("intro1.jpg"), caption: "Little artists", alt: "Young students engaged in creative art activities" },
   { src: pic("gallery/Picture18.jpg"), caption: "Joyful play", alt: "Students enjoying playful learning activities" },
@@ -108,7 +116,6 @@ const galleryItems = [
   { src: pic("intro3.jpg"), caption: "Discoveries", alt: "Children making discoveries through hands-on learning" },
   { src: pic("gallery/IMG_2085.jpg"), caption: "Proud moments", alt: "Proud moments of achievement at KRM Special School" },
   { src: pic("about/about2.jpg"), caption: "Caring hands", alt: "Caring teachers and educators at KRM Special School" },
-  { src: pic("gallery/campus-building-2026-06-20.jpeg"), caption: "Our campus", alt: "KRM Special School campus building in Perambur Chennai" },
 ];
 
 function Home() {
@@ -167,8 +174,8 @@ function Home() {
             <div className="mt-12 grid grid-cols-3 gap-8 max-w-md border-t border-white/20 pt-8">
               {[
                 { n: "250+", l: "Students" },
-                { n: "50+", l: "Educators" },
-                { n: "300+", l: "Parents" },
+                { n: "30+", l: "Educators" },
+                { n: "180+", l: "Parents" },
               ].map((s) => (
                 <div key={s.l}>
                   <div className="font-display text-3xl md:text-4xl text-[var(--gold)]">{s.n}</div>
@@ -219,8 +226,8 @@ function Home() {
         <div className="container mx-auto px-4 grid lg:grid-cols-2 gap-16 items-center">
           <div className="relative">
             <img
-              src={pic("about/about2.jpg")}
-              alt="KRM Special School educators and students"
+              src={campusBuilding.url}
+              alt="KRM Special School campus building in Perambur, Chennai"
               className="rounded-[2rem] shadow-2xl w-full object-cover aspect-[4/3]"
               loading="lazy"
             />
@@ -235,8 +242,8 @@ function Home() {
               independent school in the year 2013.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              We handle children with Dyslexic, Autistic, ID, ADHD and developmental
-              delay. These children are trained by Special Educators.
+              We handle children with ID, ASD, ADHD, ADD, CP and Neurodivergent
+              kids. These children are trained by our team of Special Educators.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-4">
               On the basis of detailed assessment report, classes will be allotted
@@ -553,6 +560,68 @@ function Home() {
                 </div>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* ------------ GOVERNMENT REGISTRATION ------------ */}
+      <section className="py-24 bg-[var(--sky)]/30 relative overflow-hidden">
+        <Butterfly size={56} className="absolute top-10 right-[6%] opacity-25 animate-flutter hidden lg:block" />
+        <div className="container mx-auto px-4 max-w-6xl relative">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <p className="text-[var(--royal)] text-xs tracking-[0.35em] uppercase mb-3">
+                Recognised &amp; Registered
+              </p>
+              <h2 className="section-title">
+                Officially registered by the Government of Tamil Nadu.
+              </h2>
+              <p className="text-muted-foreground mt-5 leading-relaxed">
+                KRM Special School holds a Certificate of Registration from the Commissionerate for
+                the Welfare of the Differently Abled, Chennai, under Section 51(2) of the Rights of
+                Persons with Disabilities Act, 2016 — assuring families that our care, classrooms and
+                staffing meet recognised standards.
+              </p>
+              <div className="grid sm:grid-cols-2 gap-4 mt-8">
+                {[
+                  { label: "Registration No.", value: "882/2025" },
+                  { label: "Proceedings No.", value: "004132/Adm.7/2025" },
+                  { label: "Valid From", value: "08.01.2026" },
+                  { label: "Valid Up To", value: "30.04.2028" },
+                ].map((d) => (
+                  <div key={d.label} className="soft-card p-5">
+                    <p className="text-xs uppercase tracking-wider text-muted-foreground mb-1">
+                      {d.label}
+                    </p>
+                    <p className="font-display text-lg text-[var(--navy)]">{d.value}</p>
+                  </div>
+                ))}
+              </div>
+              <p className="text-sm text-muted-foreground mt-6 leading-relaxed">
+                Registered to run a special school for children with disabilities (intellectual
+                disability, autism) across Pre-Primary, Classes I to XII, Pre-Vocational, NIOS and
+                vocational classes.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-2 gap-4">
+              {[certificatePage1, certificatePage2].map((c, i) => (
+                <a
+                  key={i}
+                  href={c.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block rounded-2xl overflow-hidden shadow-xl bg-white ring-1 ring-[var(--gold)]/30 focus:outline-none focus:ring-2 focus:ring-[var(--gold)]"
+                >
+                  <img
+                    src={c.url}
+                    alt={`KRM Special School Certificate of Registration, page ${i + 1}`}
+                    loading="lazy"
+                    className="w-full h-full object-cover"
+                  />
+                </a>
+              ))}
+            </div>
           </div>
         </div>
       </section>

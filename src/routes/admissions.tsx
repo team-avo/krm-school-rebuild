@@ -63,7 +63,7 @@ const documents = [
 const faqs = [
   { q: "What age groups do you accept?", a: "We support children from early intervention (around 3 years) through to vocational training in late teens. Every plan is built around the child." },
   { q: "Is there a waiting list?", a: "We try to welcome every child we can. Some classes have limited seats, please get in touch early to discuss availability." },
-  { q: "What is the student–teacher ratio?", a: "Our classrooms run at a 7:1 student-to-teacher ratio with a supporting educator, ensuring deep, individual attention." },
+  { q: "What is the student–teacher ratio?", a: "Our classrooms run at a 10:1 student-to-teacher ratio with a supporting educator, ensuring deep, individual attention." },
   { q: "Do you offer therapy on campus?", a: "Yes. Occupational, speech, physio, behaviour and sensory therapy are all delivered in-house by qualified therapists." },
   { q: "Can parents visit before enrolling?", a: "Absolutely, we encourage it. A school visit is the best way to feel our warmth and meet our team." },
 ];
@@ -253,7 +253,7 @@ function AdmissionsPage() {
               Share a few details about your child and we'll reach out within a working day. No obligation, just a friendly conversation.
             </p>
             <ul className="space-y-4 mb-8">
-              <li className="flex gap-4 items-start"><MapPin className="text-[var(--royal)] mt-1 shrink-0" /><span>No 10, Bharathi Road, Perambur, Chennai 600011</span></li>
+              <li className="flex gap-4 items-start"><MapPin className="text-[var(--royal)] mt-1 shrink-0" /><span>No 10, Bharathi Road, 2nd Street, Perambur, Chennai 600011</span></li>
               <li className="flex gap-4 items-start"><Phone className="text-[var(--royal)] mt-1 shrink-0" /><span>9042 111 150 · 8939 977 645</span></li>
               <li className="flex gap-4 items-start"><Mail className="text-[var(--royal)] mt-1 shrink-0" /><a href="mailto:krm.specialschool@gmail.com" className="hover:text-[var(--royal)]">krm.specialschool@gmail.com</a></li>
             </ul>

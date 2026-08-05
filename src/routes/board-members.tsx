@@ -24,10 +24,10 @@ const members: Member[] = [
   },
   {
     name: "SMT. J. Jayalakshmi",
-    role: "Correspondent",
+    role: "Chief Correspondent",
     img: jeyalakshmiAsset.url,
     bio: [
-      "CORRESPONDENT SMT. J. Jayalakshmi has been the founding pillar of our Kaligi Group of Schools. From the very beginning she has been responsible for the financials and resource management of the school especially during a time when no such system was in place.",
+      "CHIEF CORRESPONDENT SMT. J. Jayalakshmi has been the founding pillar of our Kaligi Group of Schools. From the very beginning she has been responsible for the financials and resource management of the school especially during a time when no such system was in place.",
       "As a cornerstone in developing the vision of the school she made sure that all who are part of the Kaligi family understood the core values. She has been a backbone of the school and a major force for the continued growth of Kaligi Group of Schools till this day.",
       "Her sharp mind and quick thinking has helped the school reach great heights and will help our schools to achieve more in the future.",
     ],
@@ -51,7 +51,7 @@ export const Route = createFileRoute("/board-members")({
       {
         name: "description",
         content:
-          "Meet the leadership of KRM Special School - Chairman Mr. R. Janardhanan, Correspondent SMT. J. Jayalakshmi and Correspondent Mrs. R. J. Kothai Praveen.",
+          "Meet the leadership of KRM Special School - Chairman Mr. R. Janardhanan, Chief Correspondent SMT. J. Jayalakshmi and Correspondent Mrs. R. J. Kothai Praveen.",
       },
     ],
   }),

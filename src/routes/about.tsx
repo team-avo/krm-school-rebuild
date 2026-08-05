@@ -31,6 +31,7 @@ import {
   Library,
   Accessibility,
   School,
+  Bus,
 } from "lucide-react";
 import { pic } from "@/lib/photos";
 
@@ -68,7 +69,7 @@ const timeline = [
 ];
 
 const trustPoints = [
-  { icon: Users, title: "7:1 student–teacher ratio", text: "Small groups, calm rooms, deep attention." },
+  { icon: Users, title: "10:1 student–teacher ratio", text: "Small groups, calm rooms, deep attention." },
   { icon: HeartHandshake, title: "Qualified special educators", text: "Trained, certified and chosen for warmth." },
   { icon: Sun, title: "Sensory-friendly campus", text: "Soft lighting, quiet corners, predictable routines." },
   { icon: BookOpen, title: "Individual Education Plans", text: "Goals shaped around each child's unique pace." },
@@ -80,6 +81,7 @@ const facilities = [
   { icon: Monitor, title: "Computer Lab", text: "Modern systems to support digital learning and skill development." },
   { icon: Library, title: "Library", text: "A quiet, welcoming collection of books and learning resources." },
   { icon: Accessibility, title: "Stair Climbing Electrical Wheel Chair", text: "Accessibility support for safe, comfortable movement." },
+  { icon: Bus, title: "School Transport", text: "Safe, reliable transport options for students across the city." },
 ];
 
 function AboutPage() {

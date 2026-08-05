@@ -28,6 +28,7 @@ export const PRIMARY_NAV: NavItem[] = [
       { label: "Early Intervention & Pre Primary", to: "/early-intervention-pre-primary" },
       { label: "I to V", to: "/programs/i-to-v" },
       { label: "VI to XII", to: "/programs/vi-to-xii" },
+      { label: "Pre NIOS", to: "/programs/pre-nios" },
       { label: "NIOS (X & XII)", to: "/nios" },
       { label: "Functional Academics", to: "/programs/functional-academics" },
       { label: "Remedial Education", to: "/programs/remedial" },

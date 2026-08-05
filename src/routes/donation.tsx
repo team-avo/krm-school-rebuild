@@ -34,6 +34,21 @@ function DonationPage() {
             Sponsor a child & make a child smile today!!
           </h2>
 
+          {/* Donation Categories */}
+          <div className="grid sm:grid-cols-3 gap-5 mb-12">
+            {[
+              { title: "Sponsor a Child", desc: "Cover a child's education, therapy, meals and daily care for a full academic year." },
+              { title: "For Building Fund", desc: "Support new classrooms, accessible infrastructure and a safer, more welcoming campus." },
+              { title: "For Therapy Equipment", desc: "Fund sensory tools, therapy aids and assistive technology that transform learning." },
+            ].map((c) => (
+              <div key={c.title} className="bg-white rounded-2xl shadow-lg p-6 ring-1 ring-[var(--gold)]/20">
+                <h3 className="font-display text-lg text-[var(--navy)] mb-2">{c.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{c.desc}</p>
+              </div>
+            ))}
+          </div>
+
+
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-10 items-stretch">
             {/* Donation Enquiry Form */}
             <div className="bg-white rounded-2xl shadow-xl p-8 flex flex-col h-full">
@@ -157,6 +172,34 @@ function DonationPage() {
                 </a>
               </div>
 
+              {/* Building Fund */}
+              <div className="bg-white rounded-2xl shadow-xl p-8 flex flex-col">
+                <h2 className="section-title mb-4">For Building Fund</h2>
+                <h3 className="text-xl font-bold text-[var(--brand-blue)] mb-3">
+                  Help us build a brighter campus
+                </h3>
+                <p className="text-muted-foreground mb-6">
+                  Contributions to our Building Fund help construct new classrooms, upgrade accessible washrooms, ramps and elevators, and create safe, sensory-friendly spaces where every child can learn comfortably.
+                </p>
+                <a href="mailto:krm.specialschool@gmail.com?subject=Building Fund Donation" className="btn-gold w-fit mt-auto">
+                  Donate to Building Fund
+                </a>
+              </div>
+
+              {/* Therapy Equipment */}
+              <div className="bg-white rounded-2xl shadow-xl p-8 flex flex-col">
+                <h2 className="section-title mb-4">For Therapy Equipment</h2>
+                <h3 className="text-xl font-bold text-[var(--brand-blue)] mb-3">
+                  Equip our therapists to help more children
+                </h3>
+                <p className="text-muted-foreground mb-6">
+                  Your support funds sensory integration tools, physiotherapy and occupational therapy aids, speech therapy devices, adaptive seating and assistive technology that directly improve each child's progress.
+                </p>
+                <a href="mailto:krm.specialschool@gmail.com?subject=Therapy Equipment Donation" className="btn-gold w-fit mt-auto">
+                  Donate for Therapy Equipment
+                </a>
+              </div>
+
               {/* QR Code */}
               <div className="bg-white rounded-2xl shadow-xl p-8 flex flex-col items-center text-center">
                 <h3 className="text-2xl font-bold text-[var(--brand-blue)] mb-6">
@@ -176,6 +219,20 @@ function DonationPage() {
                 </p>
               </div>
             </div>
+          </div>
+
+          {/* Donation Guidelines */}
+          <div className="mt-12 bg-white rounded-2xl shadow-xl p-8">
+            <h3 className="text-2xl font-bold text-[var(--brand-blue)] mb-4">
+              Donation Guidelines
+            </h3>
+            <ul className="space-y-3 text-sm text-muted-foreground leading-relaxed list-disc pl-5">
+              <li>All donations to KRM Special Children Charitable and Educational Trust are gratefully acknowledged with an official receipt.</li>
+              <li>Donations may be made by cheque, NEFT/IMPS/UPI or online transfer using the account details above. Please share the transaction reference with the school office so we can issue your receipt promptly.</li>
+              <li>Please specify the purpose of your donation (Sponsor a Child, Building Fund or Therapy Equipment) in the enquiry form or transfer remarks.</li>
+              <li>Kindly share your PAN and postal address with the office to enable us to issue tax-exemption certificates where applicable.</li>
+              <li>For corporate CSR partnerships, in-kind donations or bulk sponsorships, please contact the school office directly.</li>
+            </ul>
           </div>
         </div>
       </section>

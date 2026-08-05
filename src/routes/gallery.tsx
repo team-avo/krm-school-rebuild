@@ -56,6 +56,8 @@ function GalleryPage() {
       "Events": "Events",
       "Campus Moments": "Learning",
       "Therapy": "Activities",
+      "Classroom": "Learning",
+
     };
     const main = galleryEntries.map((entry, i) => {
       const meta = galleryMetaFor(entry.key);

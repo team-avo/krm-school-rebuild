@@ -31,8 +31,10 @@ import {
   Trophy,
   Activity,
   Dumbbell,
+  GraduationCap,
 } from "lucide-react";
 import { pic, galleryPhotos } from "@/lib/photos";
+import programsOverview from "@/assets/krm/programs/programs-overview.png.asset.json";
 
 export const Route = createFileRoute("/programs/")({
   head: () => ({
@@ -45,7 +47,7 @@ export const Route = createFileRoute("/programs/")({
       },
       { property: "og:title", content: "Programs | KRM Special School" },
       { property: "og:description", content: "Premium child-centred programmes for every stage." },
-      { property: "og:image", content: pic("activities/intro1.jpg") },
+      { property: "og:image", content: programsOverview.url },
     ],
   }),
   component: ProgramsIndex,
@@ -91,6 +93,14 @@ const programs = [
     text: "Annual day, festivals and family days, every child celebrated, every milestone honoured.",
     bg: "#FFF4DC",
     bg2: "#FFEAD8",
+  },
+  {
+    slug: "pre-nios",
+    icon: GraduationCap,
+    title: "Pre NIOS",
+    text: "Foundational elementary education through NIOS Open Basic Education for children and adults who missed formal schooling.",
+    bg: "#E8F4FF",
+    bg2: "#FFF4DC",
   },
   {
     slug: "pre-primary",
@@ -158,7 +168,7 @@ function ProgramsIndex() {
           <div className="relative hidden lg:block">
             <div className="absolute -inset-8 bg-[var(--gold)]/10 rounded-[3rem] blur-3xl" />
             <div className="relative glass-card p-5 rotate-[-2deg]">
-              <img src={pic("activities/intro1.jpg")} alt="Children learning" className="rounded-2xl w-full aspect-[4/5] object-cover" />
+              <img src={programsOverview.url} alt="KRM Special School program overview" className="rounded-2xl w-full aspect-[16/10] object-cover" />
             </div>
             <AlphabetBlock size={48} letter="A" className="absolute -top-4 -left-4 animate-bob" />
             <PuzzlePiece size={40} className="absolute -bottom-3 right-8 animate-bob" />
@@ -179,7 +189,7 @@ function ProgramsIndex() {
           <p className="text-[var(--royal)] text-xs tracking-[0.35em] uppercase mb-3">Programmes Overview</p>
           <h2 className="section-title mb-4">Six pillars. One promise.</h2>
           <p className="text-muted-foreground leading-relaxed">
-            Every programme at KRM is delivered by qualified special educators and therapists, with a 7:1 ratio, in calm, sensory-friendly rooms. Together, they form one warm ecosystem of care.
+            Every programme at KRM is delivered by qualified special educators and therapists, with a 10:1 ratio, in calm, sensory-friendly rooms. Together, they form one warm ecosystem of care.
           </p>
         </div>
       </section>

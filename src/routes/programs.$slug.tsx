@@ -228,7 +228,7 @@ const programs: Record<string, { title: string; img: string; body?: string[]; cu
   },
   "i-to-v": {
     title: "Classes I to V",
-    img: pic("intro1.jpg"),
+    img: pic("programs/class-i-to-v-classroom.jpeg"),
     customContent: (
       <>
         <p>
@@ -236,20 +236,29 @@ const programs: Record<string, { title: string; img: string; body?: string[]; cu
         </p>
 
         <div className="not-prose mt-12 mb-8">
-          <p className="text-[var(--royal)] text-xs tracking-[0.35em] uppercase mb-2">Special Education</p>
-          <h3 className="font-display text-2xl md:text-3xl text-[var(--navy)] mb-6">CLASS I – V (SPECIAL EDUCATION)</h3>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {specialEducationItems.map((item) => (
+          <p className="text-[var(--royal)] text-xs tracking-[0.35em] uppercase mb-2">Ennum Ezhuthum</p>
+          <h3 className="font-display text-2xl md:text-3xl text-[var(--navy)] mb-4">CLASS I – V (A – SECTION) — ENNUM EZHUTHUM</h3>
+          <p className="mb-6 text-muted-foreground leading-relaxed">
+            "Ennum Ezhuthum" (எண்ணும் எழுத்தும் — "Numbers and Letters") is the Government of Tamil Nadu's foundational literacy and numeracy mission for primary classes. It builds strong reading, writing and arithmetic skills through play-based, activity-driven learning aligned with the Samacheer Kalvi curriculum, so every child achieves grade-level competency at their own pace.
+          </p>
+          <h4 className="font-display text-lg text-[var(--navy)] mb-3">Key Features of the Program</h4>
+          <ul className="list-disc list-inside mb-8 text-muted-foreground leading-relaxed space-y-1">
+            <li><strong className="text-[var(--navy)]">Target Group:</strong> Students from Classes 1 to 3 in government and government-aided schools.</li>
+            <li><strong className="text-[var(--navy)]">Primary Objective:</strong> To bridge critical learning gaps caused by pandemic-related school closures.</li>
+            <li><strong className="text-[var(--navy)]">Pedagogy:</strong> Uses storytelling, play-based activities, picture cards, and customized teacher training rather than rote memorization.</li>
+          </ul>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {samacheerItems.map((item) => (
               <SectionCard key={item.title} {...item} />
             ))}
           </div>
         </div>
 
         <div className="not-prose mt-12 mb-8">
-          <p className="text-[var(--royal)] text-xs tracking-[0.35em] uppercase mb-2">Samacheer Kalvi</p>
-          <h3 className="font-display text-2xl md:text-3xl text-[var(--navy)] mb-6">CLASS I – V (SAMACHEER)</h3>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {samacheerItems.map((item) => (
+          <p className="text-[var(--royal)] text-xs tracking-[0.35em] uppercase mb-2">Special Education</p>
+          <h3 className="font-display text-2xl md:text-3xl text-[var(--navy)] mb-6">CLASS I – V (B – SECTION) — SPECIAL EDUCATION</h3>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {specialEducationItems.map((item) => (
               <SectionCard key={item.title} {...item} />
             ))}
           </div>
@@ -259,7 +268,8 @@ const programs: Record<string, { title: string; img: string; body?: string[]; cu
   },
   "vi-to-xii": {
     title: "Classes VI to XII",
-    img: pic("intro2.jpg"),
+    img: pic("programs/class-vi-to-xii-classroom.jpeg"),
+
     customContent: (
       <>
         <p>
@@ -289,6 +299,29 @@ const programs: Record<string, { title: string; img: string; body?: string[]; cu
     body: [
       "KRM is an accredited NIOS centre, enabling students to appear for X and XII board examinations through the National Institute of Open Schooling with curriculum support tailored to their pace.",
     ],
+  },
+  "pre-nios": {
+    title: "Pre NIOS",
+    img: pic("gallery/new-2026-02-04-classroom-cards.jpeg"),
+    body: [
+      "Pre-NIOS refers to the Open Basic Education (OBE) program offered by the National Institute of Open Schooling, which provides foundational elementary education equivalent to formal schooling for children and adults.",
+    ],
+    customContent: (
+      <>
+        <p>
+          Pre-NIOS refers to the Open Basic Education (OBE) program offered by the National Institute of Open Schooling, which provides foundational elementary education equivalent to formal schooling for children and adults.
+        </p>
+        <div className="not-prose mt-12 mb-8">
+          <p className="text-[var(--royal)] text-xs tracking-[0.35em] uppercase mb-2">Key Features</p>
+          <h3 className="font-display text-2xl md:text-3xl text-[var(--navy)] mb-6">Open Basic Education Highlights</h3>
+          <ul className="list-disc list-inside mb-8 text-muted-foreground leading-relaxed space-y-2">
+            <li><strong className="text-[var(--navy)]">Target Group:</strong> Open to children under 14 who missed school and adults above 14.</li>
+            <li><strong className="text-[var(--navy)]">Equivalency:</strong> Recognized as matching the elementary education standards of regular schools.</li>
+            <li><strong className="text-[var(--navy)]">Goal:</strong> Prepares students to enter secondary education (Class 10) under NIOS.</li>
+          </ul>
+        </div>
+      </>
+    ),
   },
   "functional-academics": {
     title: "Functional Academics",
@@ -351,7 +384,8 @@ const programs: Record<string, { title: string; img: string; body?: string[]; cu
   },
   "physical-training-yoga": {
     title: "Physical Training & Yoga",
-    img: pic("yoga.jpg"),
+    img: pic("programs/physical-training-yoga-class.jpeg"),
+
     gallery: [
       pic("therapy/yoga.jpg"),
       pic("therapy/skating.jpg"),
