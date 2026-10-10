@@ -9,80 +9,75 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as VocationalRouteImport } from './routes/vocational'
-import { Route as VisionMissionRouteImport } from './routes/vision-mission'
-import { Route as TherapyRouteImport } from './routes/therapy'
-import { Route as PreVocationalRouteImport } from './routes/pre-vocational'
-import { Route as PhotogalleryRouteImport } from './routes/photogallery'
-import { Route as NiosRouteImport } from './routes/nios'
-import { Route as GalleryRouteImport } from './routes/gallery'
-import { Route as EventsRouteImport } from './routes/events'
-import { Route as EligibilityCriteriaRouteImport } from './routes/eligibility-criteria'
-import { Route as EcaRouteImport } from './routes/eca'
-import { Route as EarlyInterventionPrePrimaryRouteImport } from './routes/early-intervention-pre-primary'
-import { Route as EMagazineRouteImport } from './routes/e-magazine'
-import { Route as DonationRouteImport } from './routes/donation'
-import { Route as ContactRouteImport } from './routes/contact'
-import { Route as BoardMembersRouteImport } from './routes/board-members'
-import { Route as AdmissionsRouteImport } from './routes/admissions'
-import { Route as Achievements20252026RouteImport } from './routes/achievements-2025-2026'
-import { Route as Achievements20242025RouteImport } from './routes/achievements-2024-2025'
-import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as ProgramsIndexRouteImport } from './routes/programs.index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as Achievements20242025RouteImport } from './routes/achievements-2024-2025'
+import { Route as Achievements20252026RouteImport } from './routes/achievements-2025-2026'
+import { Route as AdmissionsRouteImport } from './routes/admissions'
+import { Route as BoardMembersRouteImport } from './routes/board-members'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as DonationRouteImport } from './routes/donation'
+import { Route as EMagazineRouteImport } from './routes/e-magazine'
+import { Route as EarlyInterventionPrePrimaryRouteImport } from './routes/early-intervention-pre-primary'
+import { Route as EcaRouteImport } from './routes/eca'
+import { Route as EligibilityCriteriaRouteImport } from './routes/eligibility-criteria'
+import { Route as EventsRouteImport } from './routes/events'
+import { Route as GalleryRouteImport } from './routes/gallery'
+import { Route as NiosRouteImport } from './routes/nios'
+import { Route as PhotogalleryRouteImport } from './routes/photogallery'
+import { Route as PreVocationalRouteImport } from './routes/pre-vocational'
+import { Route as TherapyRouteImport } from './routes/therapy'
+import { Route as VisionMissionRouteImport } from './routes/vision-mission'
+import { Route as VocationalRouteImport } from './routes/vocational'
 import { Route as AchievementsIndexRouteImport } from './routes/achievements.index'
-import { Route as ProgramsSlugRouteImport } from './routes/programs.$slug'
-import { Route as EventsIdRouteImport } from './routes/events.$id'
 import { Route as AchievementsYearRouteImport } from './routes/achievements.$year'
+import { Route as EventsIdRouteImport } from './routes/events.$id'
+import { Route as ProgramsIndexRouteImport } from './routes/programs.index'
+import { Route as ProgramsSlugRouteImport } from './routes/programs.$slug'
 
-const VocationalRoute = VocationalRouteImport.update({
-  id: '/vocational',
-  path: '/vocational',
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const VisionMissionRoute = VisionMissionRouteImport.update({
-  id: '/vision-mission',
-  path: '/vision-mission',
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
-const TherapyRoute = TherapyRouteImport.update({
-  id: '/therapy',
-  path: '/therapy',
+const Achievements20242025Route = Achievements20242025RouteImport.update({
+  id: '/achievements-2024-2025',
+  path: '/achievements-2024-2025',
   getParentRoute: () => rootRouteImport,
 } as any)
-const PreVocationalRoute = PreVocationalRouteImport.update({
-  id: '/pre-vocational',
-  path: '/pre-vocational',
+const Achievements20252026Route = Achievements20252026RouteImport.update({
+  id: '/achievements-2025-2026',
+  path: '/achievements-2025-2026',
   getParentRoute: () => rootRouteImport,
 } as any)
-const PhotogalleryRoute = PhotogalleryRouteImport.update({
-  id: '/photogallery',
-  path: '/photogallery',
+const AdmissionsRoute = AdmissionsRouteImport.update({
+  id: '/admissions',
+  path: '/admissions',
   getParentRoute: () => rootRouteImport,
 } as any)
-const NiosRoute = NiosRouteImport.update({
-  id: '/nios',
-  path: '/nios',
+const BoardMembersRoute = BoardMembersRouteImport.update({
+  id: '/board-members',
+  path: '/board-members',
   getParentRoute: () => rootRouteImport,
 } as any)
-const GalleryRoute = GalleryRouteImport.update({
-  id: '/gallery',
-  path: '/gallery',
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
-const EventsRoute = EventsRouteImport.update({
-  id: '/events',
-  path: '/events',
+const DonationRoute = DonationRouteImport.update({
+  id: '/donation',
+  path: '/donation',
   getParentRoute: () => rootRouteImport,
 } as any)
-const EligibilityCriteriaRoute = EligibilityCriteriaRouteImport.update({
-  id: '/eligibility-criteria',
-  path: '/eligibility-criteria',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const EcaRoute = EcaRouteImport.update({
-  id: '/eca',
-  path: '/eca',
+const EMagazineRoute = EMagazineRouteImport.update({
+  id: '/e-magazine',
+  path: '/e-magazine',
   getParentRoute: () => rootRouteImport,
 } as any)
 const EarlyInterventionPrePrimaryRoute =
@@ -91,54 +86,54 @@ const EarlyInterventionPrePrimaryRoute =
     path: '/early-intervention-pre-primary',
     getParentRoute: () => rootRouteImport,
   } as any)
-const EMagazineRoute = EMagazineRouteImport.update({
-  id: '/e-magazine',
-  path: '/e-magazine',
+const EcaRoute = EcaRouteImport.update({
+  id: '/eca',
+  path: '/eca',
   getParentRoute: () => rootRouteImport,
 } as any)
-const DonationRoute = DonationRouteImport.update({
-  id: '/donation',
-  path: '/donation',
+const EligibilityCriteriaRoute = EligibilityCriteriaRouteImport.update({
+  id: '/eligibility-criteria',
+  path: '/eligibility-criteria',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ContactRoute = ContactRouteImport.update({
-  id: '/contact',
-  path: '/contact',
+const EventsRoute = EventsRouteImport.update({
+  id: '/events',
+  path: '/events',
   getParentRoute: () => rootRouteImport,
 } as any)
-const BoardMembersRoute = BoardMembersRouteImport.update({
-  id: '/board-members',
-  path: '/board-members',
+const GalleryRoute = GalleryRouteImport.update({
+  id: '/gallery',
+  path: '/gallery',
   getParentRoute: () => rootRouteImport,
 } as any)
-const AdmissionsRoute = AdmissionsRouteImport.update({
-  id: '/admissions',
-  path: '/admissions',
+const NiosRoute = NiosRouteImport.update({
+  id: '/nios',
+  path: '/nios',
   getParentRoute: () => rootRouteImport,
 } as any)
-const Achievements20252026Route = Achievements20252026RouteImport.update({
-  id: '/achievements-2025-2026',
-  path: '/achievements-2025-2026',
+const PhotogalleryRoute = PhotogalleryRouteImport.update({
+  id: '/photogallery',
+  path: '/photogallery',
   getParentRoute: () => rootRouteImport,
 } as any)
-const Achievements20242025Route = Achievements20242025RouteImport.update({
-  id: '/achievements-2024-2025',
-  path: '/achievements-2024-2025',
+const PreVocationalRoute = PreVocationalRouteImport.update({
+  id: '/pre-vocational',
+  path: '/pre-vocational',
   getParentRoute: () => rootRouteImport,
 } as any)
-const AboutRoute = AboutRouteImport.update({
-  id: '/about',
-  path: '/about',
+const TherapyRoute = TherapyRouteImport.update({
+  id: '/therapy',
+  path: '/therapy',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+const VisionMissionRoute = VisionMissionRouteImport.update({
+  id: '/vision-mission',
+  path: '/vision-mission',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ProgramsIndexRoute = ProgramsIndexRouteImport.update({
-  id: '/programs/',
-  path: '/programs/',
+const VocationalRoute = VocationalRouteImport.update({
+  id: '/vocational',
+  path: '/vocational',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AchievementsIndexRoute = AchievementsIndexRouteImport.update({
@@ -146,9 +141,9 @@ const AchievementsIndexRoute = AchievementsIndexRouteImport.update({
   path: '/achievements/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ProgramsSlugRoute = ProgramsSlugRouteImport.update({
-  id: '/programs/$slug',
-  path: '/programs/$slug',
+const AchievementsYearRoute = AchievementsYearRouteImport.update({
+  id: '/achievements/$year',
+  path: '/achievements/$year',
   getParentRoute: () => rootRouteImport,
 } as any)
 const EventsIdRoute = EventsIdRouteImport.update({
@@ -156,9 +151,14 @@ const EventsIdRoute = EventsIdRouteImport.update({
   path: '/$id',
   getParentRoute: () => EventsRoute,
 } as any)
-const AchievementsYearRoute = AchievementsYearRouteImport.update({
-  id: '/achievements/$year',
-  path: '/achievements/$year',
+const ProgramsIndexRoute = ProgramsIndexRouteImport.update({
+  id: '/programs/',
+  path: '/programs/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProgramsSlugRoute = ProgramsSlugRouteImport.update({
+  id: '/programs/$slug',
+  path: '/programs/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -357,130 +357,11 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/vocational': {
-      id: '/vocational'
-      path: '/vocational'
-      fullPath: '/vocational'
-      preLoaderRoute: typeof VocationalRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/vision-mission': {
-      id: '/vision-mission'
-      path: '/vision-mission'
-      fullPath: '/vision-mission'
-      preLoaderRoute: typeof VisionMissionRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/therapy': {
-      id: '/therapy'
-      path: '/therapy'
-      fullPath: '/therapy'
-      preLoaderRoute: typeof TherapyRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/pre-vocational': {
-      id: '/pre-vocational'
-      path: '/pre-vocational'
-      fullPath: '/pre-vocational'
-      preLoaderRoute: typeof PreVocationalRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/photogallery': {
-      id: '/photogallery'
-      path: '/photogallery'
-      fullPath: '/photogallery'
-      preLoaderRoute: typeof PhotogalleryRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/nios': {
-      id: '/nios'
-      path: '/nios'
-      fullPath: '/nios'
-      preLoaderRoute: typeof NiosRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/gallery': {
-      id: '/gallery'
-      path: '/gallery'
-      fullPath: '/gallery'
-      preLoaderRoute: typeof GalleryRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/events': {
-      id: '/events'
-      path: '/events'
-      fullPath: '/events'
-      preLoaderRoute: typeof EventsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/eligibility-criteria': {
-      id: '/eligibility-criteria'
-      path: '/eligibility-criteria'
-      fullPath: '/eligibility-criteria'
-      preLoaderRoute: typeof EligibilityCriteriaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/eca': {
-      id: '/eca'
-      path: '/eca'
-      fullPath: '/eca'
-      preLoaderRoute: typeof EcaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/early-intervention-pre-primary': {
-      id: '/early-intervention-pre-primary'
-      path: '/early-intervention-pre-primary'
-      fullPath: '/early-intervention-pre-primary'
-      preLoaderRoute: typeof EarlyInterventionPrePrimaryRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/e-magazine': {
-      id: '/e-magazine'
-      path: '/e-magazine'
-      fullPath: '/e-magazine'
-      preLoaderRoute: typeof EMagazineRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/donation': {
-      id: '/donation'
-      path: '/donation'
-      fullPath: '/donation'
-      preLoaderRoute: typeof DonationRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/contact': {
-      id: '/contact'
-      path: '/contact'
-      fullPath: '/contact'
-      preLoaderRoute: typeof ContactRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/board-members': {
-      id: '/board-members'
-      path: '/board-members'
-      fullPath: '/board-members'
-      preLoaderRoute: typeof BoardMembersRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/admissions': {
-      id: '/admissions'
-      path: '/admissions'
-      fullPath: '/admissions'
-      preLoaderRoute: typeof AdmissionsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/achievements-2025-2026': {
-      id: '/achievements-2025-2026'
-      path: '/achievements-2025-2026'
-      fullPath: '/achievements-2025-2026'
-      preLoaderRoute: typeof Achievements20252026RouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/achievements-2024-2025': {
-      id: '/achievements-2024-2025'
-      path: '/achievements-2024-2025'
-      fullPath: '/achievements-2024-2025'
-      preLoaderRoute: typeof Achievements20242025RouteImport
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about': {
@@ -490,18 +371,130 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+    '/achievements-2024-2025': {
+      id: '/achievements-2024-2025'
+      path: '/achievements-2024-2025'
+      fullPath: '/achievements-2024-2025'
+      preLoaderRoute: typeof Achievements20242025RouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/programs/': {
-      id: '/programs/'
-      path: '/programs'
-      fullPath: '/programs/'
-      preLoaderRoute: typeof ProgramsIndexRouteImport
+    '/achievements-2025-2026': {
+      id: '/achievements-2025-2026'
+      path: '/achievements-2025-2026'
+      fullPath: '/achievements-2025-2026'
+      preLoaderRoute: typeof Achievements20252026RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admissions': {
+      id: '/admissions'
+      path: '/admissions'
+      fullPath: '/admissions'
+      preLoaderRoute: typeof AdmissionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/board-members': {
+      id: '/board-members'
+      path: '/board-members'
+      fullPath: '/board-members'
+      preLoaderRoute: typeof BoardMembersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/donation': {
+      id: '/donation'
+      path: '/donation'
+      fullPath: '/donation'
+      preLoaderRoute: typeof DonationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/e-magazine': {
+      id: '/e-magazine'
+      path: '/e-magazine'
+      fullPath: '/e-magazine'
+      preLoaderRoute: typeof EMagazineRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/early-intervention-pre-primary': {
+      id: '/early-intervention-pre-primary'
+      path: '/early-intervention-pre-primary'
+      fullPath: '/early-intervention-pre-primary'
+      preLoaderRoute: typeof EarlyInterventionPrePrimaryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/eca': {
+      id: '/eca'
+      path: '/eca'
+      fullPath: '/eca'
+      preLoaderRoute: typeof EcaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/eligibility-criteria': {
+      id: '/eligibility-criteria'
+      path: '/eligibility-criteria'
+      fullPath: '/eligibility-criteria'
+      preLoaderRoute: typeof EligibilityCriteriaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/events': {
+      id: '/events'
+      path: '/events'
+      fullPath: '/events'
+      preLoaderRoute: typeof EventsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gallery': {
+      id: '/gallery'
+      path: '/gallery'
+      fullPath: '/gallery'
+      preLoaderRoute: typeof GalleryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/nios': {
+      id: '/nios'
+      path: '/nios'
+      fullPath: '/nios'
+      preLoaderRoute: typeof NiosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/photogallery': {
+      id: '/photogallery'
+      path: '/photogallery'
+      fullPath: '/photogallery'
+      preLoaderRoute: typeof PhotogalleryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pre-vocational': {
+      id: '/pre-vocational'
+      path: '/pre-vocational'
+      fullPath: '/pre-vocational'
+      preLoaderRoute: typeof PreVocationalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/therapy': {
+      id: '/therapy'
+      path: '/therapy'
+      fullPath: '/therapy'
+      preLoaderRoute: typeof TherapyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/vision-mission': {
+      id: '/vision-mission'
+      path: '/vision-mission'
+      fullPath: '/vision-mission'
+      preLoaderRoute: typeof VisionMissionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/vocational': {
+      id: '/vocational'
+      path: '/vocational'
+      fullPath: '/vocational'
+      preLoaderRoute: typeof VocationalRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/achievements/': {
@@ -511,11 +504,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AchievementsIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/programs/$slug': {
-      id: '/programs/$slug'
-      path: '/programs/$slug'
-      fullPath: '/programs/$slug'
-      preLoaderRoute: typeof ProgramsSlugRouteImport
+    '/achievements/$year': {
+      id: '/achievements/$year'
+      path: '/achievements/$year'
+      fullPath: '/achievements/$year'
+      preLoaderRoute: typeof AchievementsYearRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/events/$id': {
@@ -525,11 +518,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EventsIdRouteImport
       parentRoute: typeof EventsRoute
     }
-    '/achievements/$year': {
-      id: '/achievements/$year'
-      path: '/achievements/$year'
-      fullPath: '/achievements/$year'
-      preLoaderRoute: typeof AchievementsYearRouteImport
+    '/programs/': {
+      id: '/programs/'
+      path: '/programs'
+      fullPath: '/programs/'
+      preLoaderRoute: typeof ProgramsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/programs/$slug': {
+      id: '/programs/$slug'
+      path: '/programs/$slug'
+      fullPath: '/programs/$slug'
+      preLoaderRoute: typeof ProgramsSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
   }

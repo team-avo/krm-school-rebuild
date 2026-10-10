@@ -40,7 +40,7 @@ export const Route = createFileRoute("/events/$id")({
 });
 
 function EventDetail() {
-  const ev = Route.useLoaderData();
+  const ev = Route.useLoaderData() as unknown as NonNullable<ReturnType<typeof getEvent>>;
   return (
     <ContentPage title={ev.title} subtitle={ev.date} image={ev.image}>
       {ev.content.map((p: string, i: number) => (

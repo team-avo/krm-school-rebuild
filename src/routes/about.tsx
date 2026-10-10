@@ -101,14 +101,14 @@ function AboutPage() {
           <div>
             <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/15 rounded-full px-4 py-1.5 mb-6">
               <Butterfly size={16} />
-              <span className="text-xs tracking-[0.25em] uppercase text-[var(--gold)]">About KRM</span>
+              <span className="text-xs tracking-[0.25em] uppercase text-[var(--gold)]">About Kaligi Ranganathan Montford (KRM)</span>
             </div>
             <h1 className="font-display text-5xl md:text-6xl leading-[1.05] mb-3">
               A story written with <span className="gradient-text">love</span>, patience and tiny butterflies.
             </h1>
             <CrayonUnderline className="w-56 h-3 mb-6 mt-2" />
             <p className="text-lg text-white/80 max-w-xl mb-8 leading-relaxed">
-              KRM Special School is a warm, premium learning home in Perambur, Chennai, where every child is welcomed for who they are and gently guided toward who they can become.
+              Kaligi Ranganathan Montford (KRM) is a warm, premium learning home in Perambur, Chennai, where every child is welcomed for who they are and gently guided toward who they can become.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link to="/admissions" className="btn-gold btn-shimmer">

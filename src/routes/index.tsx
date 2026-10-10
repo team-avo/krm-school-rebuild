@@ -238,7 +238,7 @@ function Home() {
               A school built on warmth, patience and possibility.
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              KRM Special School is a part of KRM Group of Schools and moved as an
+              Kaligi Ranganathan Montford (KRM) is a part of KRM Group of Schools and moved as an
               independent school in the year 2013.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-4">

@@ -65,7 +65,7 @@ export const Route = createFileRoute("/eligibility-criteria")({
                   {eligibilitySummary.ageGroup.label}
                 </h3>
               </div>
-              <p className="text-2xl md:text-3xl font-display text-[var(--navy)] mt-auto">
+              <p className="text-2xl md:text-3xl font-display text-[var(--navy)] flex-1 flex items-center justify-center text-center">
                 {eligibilitySummary.ageGroup.value}
               </p>
             </div>
@@ -80,7 +80,7 @@ export const Route = createFileRoute("/eligibility-criteria")({
                   {eligibilitySummary.disabilityLevel.label}
                 </h3>
               </div>
-              <p className="text-xl md:text-2xl font-display text-[var(--navy)] mt-auto">
+              <p className="text-xl md:text-2xl font-display text-[var(--navy)] flex-1 flex items-center justify-center text-center">
                 {eligibilitySummary.disabilityLevel.value}
               </p>
             </div>

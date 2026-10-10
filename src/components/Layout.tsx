@@ -19,7 +19,7 @@ export function PageHero({ title, subtitle }: { title: string; subtitle?: string
       <Butterfly size={90} className="absolute top-10 left-8 opacity-25 animate-flutter" />
       <Butterfly size={130} className="absolute -bottom-6 right-10 opacity-15 animate-float" />
       <div className="container mx-auto px-4 py-24 text-center relative z-10">
-        <p className="text-[var(--gold)] tracking-[0.4em] text-xs uppercase mb-4">KRM Special School</p>
+        <p className="text-[var(--gold)] tracking-[0.2em] sm:tracking-[0.4em] text-xs uppercase mb-4 px-2">Kaligi Ranganathan Montford (KRM)</p>
         <h1 className="text-4xl md:text-6xl font-display mb-4">{title}</h1>
         {subtitle && <p className="text-lg text-white/80 max-w-2xl mx-auto">{subtitle}</p>}
       </div>

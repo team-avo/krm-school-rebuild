@@ -93,7 +93,7 @@ export function Footer() {
         <div>
           <h4 className="font-display text-lg mb-4 text-[var(--gold)]">Reach Us</h4>
           <p className="font-display text-base font-semibold text-white mb-1 leading-snug">
-            KRM SPECIAL SCHOOL
+            KALIGI RANGANATHAN MONTFORD (KRM)
           </p>
           <p className="text-xs italic text-[var(--gold)] mb-4">
             A Special School for God's Special Children
