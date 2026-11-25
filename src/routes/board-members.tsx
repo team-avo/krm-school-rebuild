@@ -3,6 +3,7 @@ import { Layout, PageHero } from "@/components/Layout";
 import janardhananAsset from "@/assets/krm/board/Janardhanan.jpg.asset.json";
 import jeyalakshmiAsset from "@/assets/krm/board/jeyalakshmi.jpg.asset.json";
 import kothaiAsset from "@/assets/krm/board/kothaipraveen.jpg.asset.json";
+import karthikAsset from "@/assets/krm/board/karthikpraveen.jpg.asset.json";
 
 type Member = {
   name: string;
@@ -42,6 +43,16 @@ const members: Member[] = [
       "Mrs. Kothai also has a Certificate in Interior and Fashion Designing and is also has a certificate in Pranic Healing. She uses her creative mindset and educational skillset to introduce new and unique learning methods and life skills for our students.",
     ],
   },
+  {
+    name: "Mr. Karthik Praveen",
+    role: "Chief Directing Officer",
+    img: karthikAsset.url,
+    bio: [
+      "Mr. Karthik Praveen, the Chief Directing Officer of Kaligi Ranganathan Montford (KRM) Group of Schools, has a background in graphic/video game design, 3D animation and film making, serves as a key role in guiding students in learning and enhancing skills that go beyond the textbook.",
+      "His knowledge and experience with Virtual Reality (VR) helped bring a revolutionary style of learning for the students at Kaligi Ranganathan Montford (KRM) special school. This program allowed students to experience real life situations and how to navigate everyday tasks in order to prepare them for the real world. He also oversees the Blessed Angels program, an intuitive learning software that streamlines academics and gives students exposure to learning beyond the classroom.",
+      "Mr. Karthik is also an experienced martial artist and passionate about physical wellbeing. He helps improve the programs at the KRM Group of schools that benefit the physical and mental well-being of the students.",
+    ],
+  },
 ];
 
 export const Route = createFileRoute("/board-members")({
@@ -51,7 +62,7 @@ export const Route = createFileRoute("/board-members")({
       {
         name: "description",
         content:
-          "Meet the leadership of KRM Special School - Chairman Mr. R. Janardhanan, Chief Correspondent SMT. J. Jayalakshmi and Correspondent Mrs. R. J. Kothai Praveen.",
+          "Meet the leadership of KRM Special School - Chairman Mr. R. Janardhanan, Chief Correspondent SMT. J. Jayalakshmi, Correspondent Mrs. R. J. Kothai Praveen and Chief Directing Officer Mr. Karthik Praveen.",
       },
     ],
   }),
