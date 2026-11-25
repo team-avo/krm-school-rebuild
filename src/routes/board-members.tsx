@@ -83,7 +83,7 @@ export const Route = createFileRoute("/board-members")({
                 <img
                   src={m.img}
                   alt={m.name}
-                  className="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+                  className="w-full h-80 object-cover object-top transition-transform duration-700 group-hover:scale-[1.04]"
                 />
                 <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[var(--navy)]/70 to-transparent" />
               </div>
